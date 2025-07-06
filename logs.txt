@@ -1,0 +1,9 @@
+[2025-07-06 19:54:39] Evaluating models:
+[2025-07-06 19:54:42] Logistic Regression (Tuned) Test Results: F1 score: 0.8058 | Precision: 0.8384 | Recall: 0.7757
+[2025-07-06 19:55:41] Random Forest (Tuned) Test Results: F1 score: 0.7778 | Precision: 0.7706 | Recall: 0.7850
+[2025-07-06 19:55:58] XGBoost (Tuned) Test Results: F1 score: 0.7814 | Precision: 0.7778 | Recall: 0.7850
+[2025-07-06 20:03:37] LightGBM (Tuned) Test Results: F1 score: 0.7830 | Precision: 0.7905 | Recall: 0.7757
+[2025-07-06 20:03:37] Done evaluating models.
+[2025-07-06 20:03:38] Evaluating DNN model:
+[2025-07-06 20:04:06] DNN model: F1 score: 0.8312 | Precision: 0.7742 | Recall: 0.8972
+[2025-07-06 20:04:06] Done evaluating DNN model.

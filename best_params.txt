@@ -1,0 +1,4 @@
+Logistic Regression: {'C': np.float64(3.90774292152949), 'solver': 'liblinear'}
+Random Forest: {'max_depth': 20, 'min_samples_leaf': 1, 'min_samples_split': 4, 'n_estimators': 112}
+XGBoost: {'colsample_bytree': np.float64(0.7483350979559297), 'learning_rate': np.float64(0.01913970352057385), 'max_depth': 6, 'n_estimators': 404, 'subsample': np.float64(0.719708835390237)}
+LightGBM: {'learning_rate': np.float64(0.021794574191448847), 'max_depth': 19, 'n_estimators': 184, 'num_leaves': 77, 'reg_alpha': np.float64(0.8941453369562156), 'reg_lambda': np.float64(0.5982612275718309), 'verbosity': -1}
