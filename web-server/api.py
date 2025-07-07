@@ -15,11 +15,14 @@ def read_root():
     return "Hello, World!"
 
 
-@app.get("/train")
+@app.post("/train")
 def train():
-    model.train()
-    return {"status": "success", "f1": model.f1, "precision": model.precision, "recall": model.recall,
+    try:
+        model.train()
+        return {"status": "success", "f1": model.f1, "precision": model.precision, "recall": model.recall,
             "last_updated": model.last_updated}
+    except Exception as e:
+        return {"status": "error", "error": str(e)}
 
 
 @app.post("/predict")
@@ -27,17 +30,18 @@ def predict(predict_item: PredictItem):
     if not model.trained:
         return {"status": "error", "result": "Model not trained"}
     else:
-        result = model.predict(predict_item)
-        print(result)
-        return {"status": "success", "result": result}
+        try:
+            return {"status": "success", "result": model.predict(predict_item)}
+        except Exception as e:
+            return {"status": "error", "error": str(e)}
 
 
-@app.get("/last_updated")
+@app.get("/model_info")
 def last_updated():
-    if model.trained:
-        return {"last_updated": model.last_updated}
+    if not model.trained:
+        return {"status": "Not Trained"}
     else:
-        return {"last_updated": "Not Trained"}
+        return {"status": "Trained", "last_updated": model.last_updated, "f1": model.f1, "precision": model.precision, "recall": model.recall}
 
 
 @app.get("/scalar", include_in_schema=False)
